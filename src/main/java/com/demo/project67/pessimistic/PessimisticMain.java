@@ -17,7 +17,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -87,7 +86,6 @@ interface TicketRepository extends JpaRepository<Ticket, Long> {
 }
 
 @Component
-@Slf4j
 class MyService {
     @Autowired
     TicketRepository ticketRepository;
@@ -95,7 +93,7 @@ class MyService {
     @Transactional
     public Boolean bookSeat(Integer seatNumber, String personName) {
         try {
-            log.info("Booking seat: {}, By: {}", seatNumber, personName);
+            System.out.println("Booking seat: " + seatNumber + " By: " + personName);
             Ticket seat = ticketRepository.findBySeatNumberAndOnDay(seatNumber, new Date());
             if (seat.getBookedBy() == null) {
                 seat.setBookedBy(personName);
@@ -105,7 +103,7 @@ class MyService {
                 return false;
             }
         } catch (Exception ex) {
-            log.error("Error: {}", ex.getMessage());
+            System.out.println(ex.getMessage());
         }
         return false;
     }
