@@ -1,0 +1,6 @@
+spring:
+  main:
+    web-application-type: none
+  jpa:
+    hibernate.ddl-auto: create-drop
+    show-sql: true
