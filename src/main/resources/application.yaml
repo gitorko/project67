@@ -1,11 +1,10 @@
 spring:
   application:
     name: project67
+  main:
+    banner-mode: "off"
   liquibase:
     change-log: classpath:db/changelog/db.changelog-main.yaml
-  main:
-    web-application-type: none
-    banner-mode: "off"
   datasource:
     driver-class-name: org.postgresql.Driver
     host: localhost
@@ -14,6 +13,11 @@ spring:
     password: test@123
   jpa:
     show-sql: false
-    #hibernate.ddl-auto: create
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    #defer-datasource-initialization: true
+    hibernate.ddl-auto: none
+  batch:
+    jdbc:
+      initialize-schema: never
+  threads:
+    virtual:
+      enabled: true

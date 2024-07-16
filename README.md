@@ -1,6 +1,6 @@
 # Project 67
 
-Spring Batch
+Spring Batch - Multi Stage Job Orchestration
 
 [https://gitorko.github.io/spring-batch/](https://gitorko.github.io/spring-batch/)
 

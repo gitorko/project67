@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "0115125a-1e21-4e43-a17b-1186e3c5a84b",
+		"name": "Project67",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4185850"
+	},
+	"item": [
+		{
+			"name": "Book Travel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer\": \"ryan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book-travel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book-travel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
