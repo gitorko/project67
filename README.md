@@ -2,7 +2,7 @@
 
 Spring Batch - Multi Stage Job Orchestration
 
-[https://gitorko.github.io/spring-batch/](https://gitorko.github.io/spring-batch/)
+[https://gitorko.github.io/post/spring-batch-orchestration](https://gitorko.github.io/post/spring-batch-orchestration)
 
 ### Version
 
