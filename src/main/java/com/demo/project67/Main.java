@@ -33,7 +33,7 @@ public class Main {
     public CommandLineRunner onStart(JobOperator jobOperator, JobExplorer jobExplorer, JobRepository jobRepository) {
         return (args) -> {
             log.info("Identifying all stuck jobs & restarting!");
-            identifyStuckJobs(jobOperator, jobExplorer, jobRepository, "bookFlight");
+            identifyStuckJobs(jobOperator, jobExplorer, jobRepository, "mainJob");
         };
     }
 
@@ -67,9 +67,9 @@ public class Main {
     }
 
     private boolean isStuck(JobExecution jobExecution) {
-        //Assuming all jobs complete within 30 seconds. we use this to determine if a job is stuck
+        //Assuming all jobs complete within 60 seconds. we use this to determine if a job is stuck
         return jobExecution.getStatus() == BatchStatus.STARTED &&
-                Duration.between(jobExecution.getStartTime(), LocalDateTime.now()).toSeconds() > 30;
+                Duration.between(jobExecution.getStartTime(), LocalDateTime.now()).toSeconds() > 60;
     }
 
 }

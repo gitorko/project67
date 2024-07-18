@@ -21,3 +21,8 @@ spring:
   threads:
     virtual:
       enabled: true
+logging:
+  level:
+    root: info
+    #org.springframework.transaction: DEBUG
+    #org.springframework.orm.jpa: DEBUG
