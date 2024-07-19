@@ -40,7 +40,7 @@ public class BookCabTask {
                                 .createdOn(LocalDateTime.now())
                                 .build()
                 );
-                HelperUtil.delay();
+                HelperUtil.delay(10);
                 log.info("Completed bookCab, bookingId: {}", bookingId);
                 return RepeatStatus.FINISHED;
             }

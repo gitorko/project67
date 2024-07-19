@@ -35,6 +35,34 @@
 			"response": []
 		},
 		{
+			"name": "Employee Batch Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer\": \"ryan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-batch-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-batch-job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Job Status",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -92,6 +120,39 @@
 						"job",
 						"restart",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Job",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer\": \"ryan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/job/details/mainJob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"details",
+						"mainJob"
 					]
 				}
 			},

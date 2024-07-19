@@ -33,7 +33,7 @@ public class FlightRewardPointsTask {
                             .createdOn(LocalDateTime.now())
                             .build()
             );
-            HelperUtil.delay();
+            HelperUtil.delay(10);
             log.info("Completed creditFlightRewardPoints, bookingId: {}", bookingId);
             return RepeatStatus.FINISHED;
         };

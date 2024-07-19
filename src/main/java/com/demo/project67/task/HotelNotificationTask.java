@@ -47,7 +47,7 @@ public class HotelNotificationTask {
                             .build()
             );
             log.info("sendHotelNotificationTaskTransactional, bookingId: {}, Attempt: {} ", bookingId, attemptCounter.get());
-            HelperUtil.delay();
+            HelperUtil.delay(10);
             //Simulate error for first 2 attempts
             if (attemptCounter.incrementAndGet() < 3) {
                 log.error("Failed to send hotel notification!");

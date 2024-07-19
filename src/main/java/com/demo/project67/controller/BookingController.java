@@ -31,8 +31,15 @@ public class BookingController {
                 .customer(payload.getCustomer())
                 .createdOn(LocalDateTime.now())
                 .build());
-        jobService.startAsyncJob(booking);
-        return ResponseEntity.ok("Your Booking Id: " + booking.getId());
+        jobService.startAsyncTravelJob(booking);
+        return ResponseEntity.ok("Your BookingId: " + booking.getId());
+    }
+
+    @SneakyThrows
+    @PostMapping("/employee-batch-job")
+    public ResponseEntity<String> startJob() {
+        jobService.startAsyncEmployeeJob();
+        return ResponseEntity.ok("Started!");
     }
 
 }

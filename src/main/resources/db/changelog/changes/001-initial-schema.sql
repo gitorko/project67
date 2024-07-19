@@ -13,3 +13,13 @@ create table booking_event
     event      varchar(255),
     created_on  timestamp(6)
 );
+
+
+create table employee
+(
+    id              bigserial not null primary key,
+    name            varchar(255),
+    department      varchar(255),
+    salary          numeric(10,2),
+    employment_type VARCHAR(50)
+);

@@ -24,43 +24,39 @@ import org.springframework.transaction.PlatformTransactionManager;
 public class MainWorkflow {
 
     final JobRepository jobRepository;
-    final Job flightStartJob;
-    final Job hotelStartJob;
-    final Job cabStartJob;
-    final Job notificationStartJob;
     final JobParameterValidator jobParameterValidator;
     final PlatformTransactionManager transactionManager;
 
     @Bean(name = "mainJob")
-    public Job mainWorkflow() {
+    public Job mainWorkflow(Job flightStartJob, Job hotelStartJob, Job cabStartJob, Job notificationStartJob) {
         return new JobBuilder("mainJob", jobRepository)
                 .validator(jobParameterValidator)
-                .start(flightJob())
-                .next(hotelJob())
-                .next(cabJob())
-                .next(notificationJob())
+                .start(flightJob(flightStartJob))
+                .next(hotelJob(hotelStartJob))
+                .next(cabJob(cabStartJob))
+                .next(notificationJob(notificationStartJob))
                 .build();
     }
 
-    public Step flightJob() {
+    public Step flightJob(Job flightStartJob) {
         return new JobStepBuilder(new StepBuilder("flightJob", jobRepository))
                 .job(flightStartJob)
                 .build();
     }
 
-    public Step hotelJob() {
+    public Step hotelJob(Job hotelStartJob) {
         return new JobStepBuilder(new StepBuilder("hotelJob", jobRepository))
                 .job(hotelStartJob)
                 .build();
     }
 
-    public Step cabJob() {
+    public Step cabJob(Job cabStartJob) {
         return new JobStepBuilder(new StepBuilder("cabJob", jobRepository))
                 .job(cabStartJob)
                 .build();
     }
 
-    public Step notificationJob() {
+    public Step notificationJob(Job notificationStartJob) {
         return new JobStepBuilder(new StepBuilder("notificationJob", jobRepository))
                 .job(notificationStartJob)
                 .build();

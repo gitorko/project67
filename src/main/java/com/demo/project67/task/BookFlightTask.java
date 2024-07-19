@@ -33,7 +33,7 @@ public class BookFlightTask {
                             .createdOn(LocalDateTime.now())
                             .build()
             );
-            HelperUtil.delay();
+            HelperUtil.delay(10);
             log.info("Completed bookFlight, bookingId: {}", bookingId);
             return RepeatStatus.FINISHED;
         };

@@ -37,7 +37,7 @@ public class HotelRewardPointsTask {
                                 .createdOn(LocalDateTime.now())
                                 .build()
                 );
-                HelperUtil.delay();
+                HelperUtil.delay(10);
                 log.info("Completed creditHotelRewardPoints, bookingId: {}", bookingId);
                 return RepeatStatus.FINISHED;
             }

@@ -7,7 +7,7 @@ import lombok.SneakyThrows;
 public class HelperUtil {
 
     @SneakyThrows
-    public static void delay() {
-        TimeUnit.SECONDS.sleep(10);
+    public static void delay(long inSeconds) {
+        TimeUnit.SECONDS.sleep(inSeconds);
     }
 }

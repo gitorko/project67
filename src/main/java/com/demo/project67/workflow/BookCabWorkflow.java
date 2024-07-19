@@ -27,10 +27,9 @@ public class BookCabWorkflow {
 
     final JobRepository jobRepository;
     final PlatformTransactionManager transactionManager;
-    final BookCabTask bookCabTask;
-
     final BookCabStepListener bookCabTicketStepListener;
     final BookCabJobListener bookCabJobListener;
+    final BookCabTask bookCabTask;
 
     @Bean(name = "cabStartJob")
     public Job cabStartJob(Step bookCabStep) {

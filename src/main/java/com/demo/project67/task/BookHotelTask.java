@@ -33,7 +33,7 @@ public class BookHotelTask {
                             .createdOn(LocalDateTime.now())
                             .build()
             );
-            HelperUtil.delay();
+            HelperUtil.delay(10);
             log.info("Completed bookHotel, bookingId: {}", bookingId);
             return RepeatStatus.FINISHED;
         };
